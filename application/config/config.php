@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+$config['base_url']	= 'http://localhost/ecom';
 
 /*
 |--------------------------------------------------------------------------
@@ -357,6 +357,8 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
+/*Custom value pairs*/
+$config['prefix'] = 'ecom'; //on production set to '' (blank)
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */
