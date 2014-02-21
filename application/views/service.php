@@ -47,7 +47,7 @@
 								</ul>
 							</div>
 							<!--Service Link-->
-							<a class="btn btn-link btn-xs dropdown-toggle" href="service">Service </a>
+							<a class="btn btn-link btn-xs dropdown-toggle" href="#">Service </a>
 							<!--Spare Parts Drop Down List-->
 							<div class="dropdown" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Spare-parts <span class="caret"></span></button>
@@ -99,10 +99,16 @@
 							<!--Sign Up Form-->
 							<div class="col-lg-3">
 								<p style="font-weight:bold;font-size:20px;">Sign Up!!!</p>
-								<label>NAME<input type="text" placeholder="Name" class="form-control" /></label>
+								<label>FIRST NAME<input type="text" placeholder="First Name" class="form-control" /></label>
+								<label>LAST NAME<input type="text" placeholder="Last Name" class="form-control" /></label>
+								<label>ADDRESS<textarea name="address" rows="6" cols="50" class="form-control" />Enter Your Address Here.</textarea></label>
+								<label>CONTACT NO.<input type="text" placeholder="Contact No." class="form-control" /></label>
 								<label>EMAIL<input type="text" placeholder="Email" class="form-control" /></label>
-								<label>PASSWORD<input type="password" placeholder="Password" class="form-control" /></label>
-								<label>CONFIRM<input type="password" placeholder="Confirm password" class="form-control" /></label>
+								<label>MAKER<input type="text" placeholder="Name Of The Bike Maker" class="form-control" /></label>
+								<label>MODEL<input type="text" placeholder="Bike Model" class="form-control" /></label>
+								<label>ENGINE NO. NAME<input type="text" placeholder="Engine No." class="form-control" /></label>
+								<label>CHASSIS NO.<input type="text" placeholder="Chassis No." class="form-control" /></label>
+								<label>REG. NO.<input type="text" placeholder="Registration No." class="form-control" /></label>
 								<input type="submit" class="btn btn-embossed btn-primary" value="REGISTER!"></input>
 								<input type="reset" class="btn btn-embossed btn-inverse" value="CANCEL"></input>
 							</div>
