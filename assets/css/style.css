@@ -54,7 +54,7 @@ h1,h2,h3,h4,h5,h6{
 	text-align: center;
 }
 .hero-sketch{
-	width: 85%;
+	width: 75%;
 }
 .tag-line1{
 	font-size:25px;
@@ -73,10 +73,29 @@ h1,h2,h3,h4,h5,h6{
 	width:15%;
 	height:15%
 }
+.brand-logo{
+	display:inline;
+	width:3%;
+	height:3%;
+}
+.dropup-menu {
+    bottom: 100% !important;
+    top: auto !important;
+}
 .dropdown-menu > li > a{
 	display: block;
 }
 .yamaha_logo{
 	width:25%;
 	height:25%
+}
+.d{
+	display:inline-block;
+	float:left;
+}
+.bikeMainPageBrandName{
+	display:inline;
+	color:white;
+	font-weight:900;
+	font-size:25px;
 }

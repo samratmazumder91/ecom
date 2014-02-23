@@ -1,7 +1,14 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends CI_Controller {
-
+class ktmMain extends CI_Controller {
+	public function __construct(){
+		parent::__construct();
+		if (!$this->ion_auth->logged_in())
+		{
+			redirect('auth/login', 'refresh');
+		}
+	}
+	
 	public function index()
 	{
 		if($this->ion_auth->logged_in()){
@@ -9,9 +16,6 @@ class Home extends CI_Controller {
 		}else{
 			$data['session_status'] = 'GUEST_SESSION';
 		}
-		$this->load->view('home',$data);
+		$this->load->view('ktmMain',$data);
 	}
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

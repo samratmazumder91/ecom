@@ -32,18 +32,18 @@
 						<!--Main menu section-->
 						<div class="dropdown pull-right" style="display:inline-block;">
 							<!--Home Link-->
-							<a class="btn btn-link btn-xs dropdown-toggle" href="#">Home </a>
+							<a class="btn btn-link btn-xs dropdown-toggle" href="home">Home </a>
 							<!--Products Drop Down List-->
 							<div class="dropdown" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Products <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="ducatiMain"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="hondaMain"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="ktmMain"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="yamahaMain"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
 								</ul>
 							</div>
 							<!--Service Link-->
@@ -88,7 +88,7 @@
 							</div>
 						</div>-->
 						<!--Site Main Pic And Tag Lines-->
-						<div class="row">
+						<!--<div class="row">
 							<div class="col-lg-9">
 								<div class="hero-display">
 									<img src="/<?php echo $prefix; ?>/assets/img/hero_sketch.jpg" class="hero-sketch"/>
@@ -98,23 +98,86 @@
 							</div>
 							<!--Sign Up Form-->
 							<div class="col-lg-3">
-								<p style="font-weight:bold;font-size:20px;">Sign Up!!!</p>
-								<label>FIRST NAME<input type="text" placeholder="First Name" class="form-control" /></label>
-								<label>LAST NAME<input type="text" placeholder="Last Name" class="form-control" /></label>
-								<label>ADDRESS<textarea name="address" rows="6" cols="50" class="form-control" />Enter Your Address Here.</textarea></label>
-								<label>CONTACT NO.<input type="text" placeholder="Contact No." class="form-control" /></label>
-								<label>EMAIL<input type="text" placeholder="Email" class="form-control" /></label>
-								<label>MAKER<input type="text" placeholder="Name Of The Bike Maker" class="form-control" /></label>
-								<label>MODEL<input type="text" placeholder="Bike Model" class="form-control" /></label>
-								<label>ENGINE NO. NAME<input type="text" placeholder="Engine No." class="form-control" /></label>
-								<label>CHASSIS NO.<input type="text" placeholder="Chassis No." class="form-control" /></label>
-								<label>REG. NO.<input type="text" placeholder="Registration No." class="form-control" /></label>
+								<p style="font-weight:bold;font-size:20px;">REGISTER!!!</p>
+								<div class="d"><label>FIRST NAME<input type="text" placeholder="First Name" class="form-control input-sm" /></label>
+								<label>LAST NAME<input type="text" placeholder="Last Name" class="form-control input-sm" /></label></div>
+								<label>ADDRESS<textarea name="address" rows="6" cols="50" class="form-control input-sm" />Enter Your Address Here.</textarea></label>
+								<div class="d"><label>CONTACT NO.<input type="text" placeholder="Contact No." class="form-control input-sm" /></label>
+								<label>EMAIL<input type="text" placeholder="Email" class="form-control" /></label></div>
+								<div class="d"><label>MAKER<input type="text" placeholder="Name Of The Bike Maker" class="form-control input-sm" /></label>
+								<label>MODEL<input type="text" placeholder="Bike Model" class="form-control input-sm" /></label></div>
+								<div class="d"><label>ENGINE NO. NAME<input type="text" placeholder="Engine No." class="form-control input-sm" /></label>
+								<label>CHASSIS NO.<input type="text" placeholder="Chassis No." class="form-control input-sm" /></label></div>
+								<label>REG. NO.<input type="text" placeholder="Registration No." class="form-control input-sm" /></label>
 								<input type="submit" class="btn btn-embossed btn-primary" value="REGISTER!"></input>
 								<input type="reset" class="btn btn-embossed btn-inverse" value="CANCEL"></input>
 							</div>
 						</div>
 					</div>
-					<div class="panel-footer">Panel footer</div>
+					<div class="panel-footer">
+						<div class="panel-footer">
+						<div class="dropdown" style="display:inline-block;">
+							<!--Home Link-->
+							<a class="btn btn-link btn-xs dropdown-toggle" href="home">Home </a>
+							<!--Products Drop Down List-->
+							<div class="dropdown dropup" style="display:inline-block;">
+								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Products <span class="caret"></span></button>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="ducatiMain"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
+									<li role="presentation" class="divider"></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="hondaMain"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
+									<li role="presentation" class="divider"></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="ktmMain"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
+									<li role="presentation" class="divider"></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="yamahaMain"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
+								</ul>
+							</div>
+							<!--Service Link-->
+							<a class="btn btn-link btn-xs dropdown-toggle" href="service">Service </a>
+							<!--Spare Parts Drop Down List-->
+							<div class="dropdown dropup" style="display:inline-block;">
+								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Spare-parts <span class="caret"></span></button>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="#">REGULAR</a></li>
+									<li role="presentation" class="divider"></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="#">PERFORMANCE BOOSTER</a></li>
+									<li role="presentation" class="divider"></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="#">RIDING GEARS</a></li>
+								</ul>
+							</div>
+							<!--Sign In Drop Down Form-->
+							<?php
+								if($session_status == 'GUEST_SESSION')
+								{
+							?>
+							<div class="dropdown dropup" style="display:inline-block;">
+								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Sign In <span class="caret"></span></button>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+									<form action="" method="post">
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" placeholder="Email" class="form-control input-sm" /></a></li>
+										<li role="presentation" class="divider"></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="password" placeholder="Password" class="form-control input-sm" /></a></li>
+										<li role="presentation" class="divider"></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="submit" class="btn btn-embossed btn-primary btn-submit"></input></a></li>
+									</form>
+								</ul>
+							</div>
+							<?php
+								}
+								else
+								{
+							?>
+							<div class="dropdown dropup" style="display:inline-block;">
+								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown"><?php echo $this->session->userdata('user_first_name'); ?> <span class="caret"></span></button>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+									<form action="http://localhost/ecom/auth/logout" method="post" accept-charset="utf-8">
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="submit" class="btn btn-embossed btn-primary btn-submit" value="LogOut"></input></a></li>
+									</form>
+								</ul>
+							</div>
+							<?php } ?>
+					</div>
+					</div>
 				</div>
 				
 			</div>

@@ -39,11 +39,11 @@
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 									<li role="presentation"><a role="menuitem" tabindex="-1" href="ducatiMain"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="hondaMain"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ktmMain"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="yamahaMain"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
 								</ul>
 							</div>
 							<!--Service Link-->
@@ -91,35 +91,33 @@
 							</div>
 							<?php } ?>
 						</div>
-					</div>
-					<!--Site body-->
-					<div class="panel-body">
-						<!--Site Main Pic And Tag Lines-->
-						<div class="row">
-							<div class="col-lg-9">
-								<div class="hero-display">
-									<img src="/<?php echo $prefix; ?>/assets/img/hero_sketch.jpg" class="hero-sketch"/>
-									<p class="tag-line1">SALES. SERVICE. SPARE-PARTS.</p>
-									<p class="tag-line2">One Stop Solution For All Your BIKE'S Need.</p>
-								</div>
-							</div>
-							<!--Sign Up Form-->
-							<div class="col-lg-3">
-								<p style="font-weight:bold;font-size:20px;">Sign Up!!!</p>
-								<form action="http://localhost/ecom/auth/create_user" method="post" accept-charset="utf-8">
-									<label>FIRST NAME<input type="text" placeholder="First Name" class="form-control" name="first_name" value="" id="first_name"/></label>
-									<label>LAST NAME<input type="text" placeholder="Last Name" class="form-control" name="last_name" value="" id="last_name"/></label>
-									<input type="hidden" name="company" value="ksm.com" id="company"  />
-									<label>EMAIL<input type="text" placeholder="Email" class="form-control" name="email" value="" id="email"/></label>
-									<label>CONTACT NO.<input type="text" placeholder="Contact No." class="form-control" name="phone" value="" id="phone"/></label>
-									<label>PASSWORD<input type="password" placeholder="Password" class="form-control" name="password" value="" id="password"/></label>
-									<label>CONFIRM<input type="password" placeholder="Confirm password" class="form-control" name="password_confirm" value="" id="password_confirm"/></label>
-									<input type="submit" class="btn btn-embossed btn-primary" value="REGISTER!"></input>
-									<input type="reset" class="btn btn-embossed btn-inverse" value="CANCEL"></input>
-								</form>
-							</div>
 						</div>
-					</div
+					</div>
+					<!--Body Panel-->
+					<div class="panel-body">
+						<div class="bikeMainPageBrandName"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="brand-logo"/>DUCATI</div>
+						<div><br></div>
+						<div class="row">
+						  <div class="col-md-4">
+							<a href="#" class="thumbnail">
+							  <img src="/<?php echo $prefix; ?>/assets/img/diavel.png" alt="...">
+							  <div>DIAVEL</div>
+							</a>
+						  </div>
+							<div class="col-md-4">
+							<a href="#" class="thumbnail">
+							  <img src="/<?php echo $prefix; ?>/assets/img/panigale899.png" alt="...">
+							  <div>PANIGALE 899</div>
+							</a>
+						  </div>
+						  <div class="col-md-4">
+							<a href="#" class="thumbnail">
+							  <img src="/<?php echo $prefix; ?>/assets/img/monster696.png" alt="...">
+							  <div>MONSTER 696</div>
+							</a>
+						  </div>
+						</div>
+					</div>
 					<!--Footer Panel-->
 					<div class="panel-footer">
 						<div class="dropdown" style="display:inline-block;">
@@ -129,13 +127,13 @@
 							<div class="dropdown dropup" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Products <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ducatiMain"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="hondaMain"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ktmMain"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="yamahaMain"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
 								</ul>
 							</div>
 							<!--Service Link-->
@@ -184,11 +182,10 @@
 							<?php } ?>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 	</div>
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/<?php echo $prefix; ?>/assets/js/bootstrap.min.js"></script>
@@ -203,5 +200,5 @@
 		  });
 		});
 	</script>
-  </body>
+	 </body>
 </html>

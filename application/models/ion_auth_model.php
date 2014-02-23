@@ -889,7 +889,7 @@ class Ion_auth_model extends CI_Model
 
 		$this->trigger_events('extra_where');
 
-		$query = $this->db->select($this->identity_column . ', username, email, id, password, active, last_login')
+		$query = $this->db->select($this->identity_column . ', username, email, id, password, active, last_login, first_name')
 		                  ->where($this->identity_column, $this->db->escape_str($identity))
 		                  ->limit(1)
 		                  ->get($this->tables['users']);
@@ -934,6 +934,8 @@ class Ion_auth_model extends CI_Model
 
 				$this->trigger_events(array('post_login', 'post_login_successful'));
 				$this->set_message('login_successful');
+				$this->session->set_userdata('user_id', $user->id);
+				$this->session->set_userdata('user_first_name', $user->first_name);
 
 				return TRUE;
 			}
