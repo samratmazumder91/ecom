@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Products extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 			$this->load->model('products_model');
@@ -13,10 +13,13 @@ class Home extends CI_Controller {
 		}else{
 			$data['session_status'] = 'GUEST_SESSION';
 		}
+	}
+	
+	public function show($product_id){
+		//echo 'Display listing for product id '.$product_id;
 		
-		$data['products'] = $this->products_model->get_products();
-		
-		$this->load->view('home',$data);
+		//get all listings from database through model
+		//load a listing view and pass results returned from db
 	}
 }
 

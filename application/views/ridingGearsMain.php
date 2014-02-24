@@ -92,25 +92,25 @@
 					</div>
 					<!--Body Panel-->
 					<div class="panel-body">
-						<div class="bikeMainPageBrandName"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="brand-logo"/>YAMAHA</div>
+						<div class="bikeMainPageBrandName"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="brand-logo"/>DUCATI</div>
 						<div><br></div>
 						<div class="row">
 						  <div class="col-md-4">
 							<a href="#" class="thumbnail">
-							  <img src="/<?php echo $prefix; ?>/assets/img/r15.jpg" alt="...">
-							  <div class="bikeName">R15</div>
+							  <img src="/<?php echo $prefix; ?>/assets/img/gloves.jpg" alt="...">
+							  <div class="bikeName">GLOVES</div>
 							</a>
 						  </div>
 							<div class="col-md-4">
 							<a href="#" class="thumbnail">
-							  <img src="/<?php echo $prefix; ?>/assets/img/fazer.jpg" alt="...">
-							  <div class="bikeName">FAZER</div>
+							  <img src="/<?php echo $prefix; ?>/assets/img/jacket.jpg" alt="...">
+							  <div class="bikeName">JACKET</div>
 							</a>
 						  </div>
 						  <div class="col-md-4">
 							<a href="#" class="thumbnail">
-							  <img src="/<?php echo $prefix; ?>/assets/img/fzs.jpg" alt="...">
-							  <div class="bikeName">FZ-S</div>
+							  <img src="/<?php echo $prefix; ?>/assets/img/helmet.jpg" alt="...">
+							  <div class="bikeName">HELMET</div>
 							</a>
 						  </div>
 						</div>
@@ -124,13 +124,13 @@
 							<div class="dropdown dropup" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Products <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ducatiMain"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="hondaMain"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ktmMain"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="yamahaMain"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
 								</ul>
 							</div>
 							<!--Service Link-->

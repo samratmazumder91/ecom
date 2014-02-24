@@ -11,6 +11,11 @@ class service extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('service');
+		if($this->ion_auth->logged_in()){
+			$data['session_status'] = 'AUTHENTICATED';
+		}else{
+			$data['session_status'] = 'GUEST_SESSION';
+		}
+		$this->load->view('service',$data);
 	}
 }

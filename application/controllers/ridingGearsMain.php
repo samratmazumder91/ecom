@@ -1,9 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class ridingGearsMain extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
-			$this->load->model('products_model');
+		/*if (!$this->ion_auth->logged_in())
+		{
+			redirect('auth/login', 'refresh');
+		}*/
 	}
 	
 	public function index()
@@ -13,12 +16,6 @@ class Home extends CI_Controller {
 		}else{
 			$data['session_status'] = 'GUEST_SESSION';
 		}
-		
-		$data['products'] = $this->products_model->get_products();
-		
-		$this->load->view('home',$data);
+		$this->load->view('ridingGearsMain',$data);
 	}
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

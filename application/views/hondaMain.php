@@ -52,11 +52,9 @@
 							<div class="dropdown" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Spare-parts <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="#">REGULAR</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="sparePartsMain">REGULAR/<br>PERFORMANCE BOOSTER</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="#">PERFORMANCE BOOSTER</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="#">RIDING GEARS</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="ridingGearsMain">RIDING GEARS</a></li>
 								</ul>
 							</div>
 							<!--Sign In Drop Down Form-->
@@ -91,7 +89,6 @@
 							</div>
 							<?php } ?>
 						</div>
-						</div>
 					</div>
 					<!--Body Panel-->
 					<div class="panel-body">
@@ -99,15 +96,15 @@
 						<div><br></div>
 						<div class="row">
 						  <div class="col-md-4">
-							<a href="#" class="thumbnail">
-							  <img src="/<?php echo $prefix; ?>/assets/img/cbr150.jpg" alt="...">
-							  <div>CBR 150R</div>
+							<a href="#" class="thumbnail img-tile">
+							  <img class="pics" src="/<?php echo $prefix; ?>/assets/img/cbr150.jpg" alt="...">
+							  <div class="bikeName">CBR 150R</div>
 							</a>
 						  </div>
 							<div class="col-md-4">
-							<a href="#" class="thumbnail">
-							  <img src="/<?php echo $prefix; ?>/assets/img/cbr250.jpg" alt="...">
-							  <div>CBR 250R</div>
+							<a href="#" class="thumbnail img-tile">
+							  <img class="pics" src="/<?php echo $prefix; ?>/assets/img/cbr250.jpg" alt="...">
+							  <div class="bikeName">CBR 250R</div>
 							</a>
 						  </div>
 						 </div>
@@ -136,11 +133,9 @@
 							<div class="dropdown dropup" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Spare-parts <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="#">REGULAR</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="sparePartsMain">REGULAR/<br>PERFORMANCE BOOSTER</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="#">PERFORMANCE BOOSTER</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="#">RIDING GEARS</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="ridingGearsMain">RIDING GEARS</a></li>
 								</ul>
 							</div>
 							<!--Sign In Drop Down Form-->
