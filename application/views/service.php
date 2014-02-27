@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Process Designer</title>
+    <title>KSM.com</title>
 	<link href="/<?php echo $prefix; ?>/assets/css/jquery-ui.css" rel="stylesheet"/>
 	<link href="/<?php echo $prefix; ?>/assets/css/elements.css" rel="stylesheet"/>
     <!-- Bootstrap -->
@@ -28,33 +28,33 @@
 				<div class="panel panel-main">
 					<div class="panel-heading">
 						<!--Site brand & logo-->
-						<h3 class="panel-title" style="color:black;display:inline;font-size:25px; font-weight: 900;">KSM.com</h3>
+						<h3 class="panel-title" style="color:black;display:inline;font-size:25px; font-weight: 900;"><a href="/<?php echo $prefix; ?>/home">KSM.com</a></h3>
 						<!--Main menu section-->
 						<div class="dropdown pull-right" style="display:inline-block;">
 							<!--Home Link-->
-							<a class="btn btn-link btn-xs dropdown-toggle" href="home">Home </a>
+							<a class="btn btn-link btn-xs dropdown-toggle" href="/<?php echo $prefix; ?>/home">Home </a>
 							<!--Products Drop Down List-->
 							<div class="dropdown" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Products <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ducatiMain"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/1"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="hondaMain"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/2"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ktmMain"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/3"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="yamahaMain"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/4"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
 								</ul>
 							</div>
 							<!--Service Link-->
-							<a class="btn btn-link btn-xs dropdown-toggle" href="#">Service </a>
+							<a class="btn btn-link btn-xs dropdown-toggle" href="service">Service </a>
 							<!--Spare Parts Drop Down List-->
 							<div class="dropdown" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Spare-parts <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="sparePartsMain">REGULAR/<br>PERFORMANCE BOOSTER</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/spare_parts/show/1">REGULAR/<br>PERFORMANCE BOOSTER</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ridingGearsMain">RIDING GEARS</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/spare_parts/show/2">RIDING GEARS</a></li>
 								</ul>
 							</div>
 							<!--Sign In Drop Down Form-->
@@ -92,43 +92,24 @@
 					</div>
 					<!--Site body-->
 					<div class="panel-body">
-						<!--Toolbar-->
-						<!--<div class="row" style="margin-top: -15px; padding: 3px;background: #dde2e8;">
-							<div class="col-lg-12" style="">
-								<div class="btn-toolbar" role="toolbar">
-									<div class="btn-group">
-										<button type="button" class="btn btn-default btn-sm fa-lg"><span class="glyphicon glyphicon-floppy-save"></span></button>
-										<button type="button" class="btn btn-default btn-sm fa-lg"><i class="fa fa-folder-open"></i></button>
-										<button type="button" class="btn btn-default btn-sm fa-lg"><i class="glyphicon glyphicon-check"></i></button>
-									</div>
-									<button type="button" class="btn btn-default btn-sm fa-lg"><i class="fa fa-plus-circle" id="addShape"></i></button>
-								</div>
-							</div>
-						</div>-->
-						<!--Site Main Pic And Tag Lines-->
-						<!--<div class="row">
-							<div class="col-lg-9">
-								<div class="hero-display">
-									<img src="/<?php echo $prefix; ?>/assets/img/hero_sketch.jpg" class="hero-sketch"/>
-									<p class="tag-line1">SALES. SERVICE. SPARE-PARTS.</p>
-									<p class="tag-line2">One Stop Solution For All Your BIKE'S Need.</p>
-								</div>
-							</div>
-							<!--Sign Up Form-->
+						<!--Sign Up Form-->
 							<div class="col-lg-3">
 								<p style="font-weight:bold;font-size:20px;">REGISTER!!!</p>
-								<div class="d"><label>FIRST NAME<input type="text" placeholder="First Name" class="form-control input-sm" /></label>
-								<label>LAST NAME<input type="text" placeholder="Last Name" class="form-control input-sm" /></label></div>
-								<label>ADDRESS<textarea name="address" rows="6" cols="50" class="form-control input-sm" />Enter Your Address Here.</textarea></label>
-								<div class="d"><label>CONTACT NO.<input type="text" placeholder="Contact No." class="form-control input-sm" /></label>
-								<label>EMAIL<input type="text" placeholder="Email" class="form-control" /></label></div>
-								<div class="d"><label>MAKER<input type="text" placeholder="Name Of The Bike Maker" class="form-control input-sm" /></label>
-								<label>MODEL<input type="text" placeholder="Bike Model" class="form-control input-sm" /></label></div>
-								<div class="d"><label>ENGINE NO. NAME<input type="text" placeholder="Engine No." class="form-control input-sm" /></label>
-								<label>CHASSIS NO.<input type="text" placeholder="Chassis No." class="form-control input-sm" /></label></div>
-								<label>REG. NO.<input type="text" placeholder="Registration No." class="form-control input-sm" /></label>
-								<input type="submit" class="btn btn-embossed btn-primary" value="REGISTER!"></input>
-								<input type="reset" class="btn btn-embossed btn-inverse" value="CANCEL"></input>
+								<?php echo validation_errors(); ?>
+								<form action="/<?php echo $prefix; ?>/service/storeData" method="post">
+									<label>FIRST NAME<input type="text" placeholder="First Name" name="first_name" value="<?php echo set_value('first_name'); ?>" class="form-control input-sm" /></label>
+									<label>LAST NAME<input type="text" placeholder="Last Name" name="last_name" value="<?php echo set_value('last_name'); ?>" class="form-control input-sm" /></label>
+									<label>ADDRESS<textarea name="address" rows="6" cols="50" name="address" value="<?php echo set_value('address'); ?>" class="form-control input-sm" />Enter Your Address Here.</textarea></label>
+									<label>MOBILE NO.<input type="text" placeholder="Mobile No." max="10" name="mobile_no" value="<?php echo set_value('mobile_no'); ?>" class="form-control input-sm" /></label>
+									<label>EMAIL<input type="text" placeholder="Email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" /></label>
+									<label>MAKER<input type="text" placeholder="Name Of The Bike Maker" name="maker" value="<?php echo set_value('maker'); ?>" class="form-control input-sm" /></label>
+									<label>MODEL<input type="text" placeholder="Bike Model" name="model" value="<?php echo set_value('model'); ?>"class="form-control input-sm" /></label>
+									<label>ENGINE NO.<input type="text" placeholder="Engine No." name="engine_no" value="<?php echo set_value('engine_no'); ?>" class="form-control input-sm" /></label>
+									<label>CHASSIS NO.<input type="text" placeholder="Chassis No." name="chassis_no" value="<?php echo set_value('chassis_no'); ?>" class="form-control input-sm" /></label>
+									<label>REG. NO.<input type="text" placeholder="Registration No." name="reg_no" value="<?php echo set_value('reg_no'); ?>" class="form-control input-sm" /></label>
+									<input type="submit" class="btn btn-embossed btn-primary" value="REGISTER!"></input>
+									<input type="reset" class="btn btn-embossed btn-inverse" value="CANCEL"></input>
+								</form>
 							</div>
 						</div>
 					</div>
@@ -140,24 +121,24 @@
 							<div class="dropdown dropup" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Products <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ducatiMain"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/1"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="hondaMain"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/2"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ktmMain"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/3"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="yamahaMain"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/4"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
 								</ul>
 							</div>
 							<!--Service Link-->
 							<a class="btn btn-link btn-xs dropdown-toggle" href="service">Service </a>
 							<!--Spare Parts Drop Down List-->
-							<div class="dropdown dropup" style="display:inline-block;">
+							<div class="dropdown" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Spare-parts <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="sparePartsMain">REGULAR/<br>PERFORMANCE BOOSTER</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/spare_parts/show/1">REGULAR/<br>PERFORMANCE BOOSTER</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ridingGearsMain">RIDING GEARS</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/spare_parts/show/2">RIDING GEARS</a></li>
 								</ul>
 							</div>
 							<!--Sign In Drop Down Form-->

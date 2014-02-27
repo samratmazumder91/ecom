@@ -28,33 +28,33 @@
 				<div class="panel panel-main">
 					<div class="panel-heading">
 						<!--Site brand & logo-->
-						<h3 class="panel-title" style="color:black;display:inline;font-size:25px; font-weight: 900;">KSM.com</h3>
+						<h3 class="panel-title" style="color:black;display:inline;font-size:25px; font-weight: 900;"><a href="/<?php echo $prefix; ?>/home">KSM.com</a></h3>
 						<!--Main menu section-->
 						<div class="dropdown pull-right" style="display:inline-block;">
 							<!--Home Link-->
-							<a class="btn btn-link btn-xs dropdown-toggle" href="home">Home </a>
+							<a class="btn btn-link btn-xs dropdown-toggle" href="/<?php echo $prefix; ?>/home">Home </a>
 							<!--Products Drop Down List-->
 							<div class="dropdown" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Products <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ducatiMain"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/1"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="hondaMain"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/2"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ktmMain"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/3"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="yamahaMain"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/4"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
 								</ul>
 							</div>
 							<!--Service Link-->
-							<a class="btn btn-link btn-xs dropdown-toggle" href="service">Service </a>
+							<a class="btn btn-link btn-xs dropdown-toggle" href="/<?php echo $prefix; ?>/service">Service </a>
 							<!--Spare Parts Drop Down List-->
 							<div class="dropdown" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Spare-parts <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="sparePartsMain">REGULAR/<br>PERFORMANCE BOOSTER</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/spare_parts/show/1">REGULAR/<br>PERFORMANCE BOOSTER</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ridingGearsMain">RIDING GEARS</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/spare_parts/show/2">RIDING GEARS</a></li>
 								</ul>
 							</div>
 							<!--Sign In Drop Down Form-->
@@ -92,28 +92,100 @@
 					</div>
 					<!--Body Panel-->
 					<div class="panel-body">
-						<div class="bikeMainPageBrandName"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="brand-logo"/>DUCATI</div>
-						<div><br></div>
-						<div class="row">
-						  <div class="col-md-4">
-							<a href="#" class="thumbnail">
-							  <img src="/<?php echo $prefix; ?>/assets/img/diavel.png" alt="...">
-							  <div class="bikeName">DIAVEL</div>
-							</a>
-						  </div>
-							<div class="col-md-4">
-							<a href="#" class="thumbnail">
-							  <img src="/<?php echo $prefix; ?>/assets/img/panigale899.png" alt="...">
-							  <div class="bikeName">PANIGALE 899</div>
-							</a>
-						  </div>
-						  <div class="col-md-4">
-							<a href="#" class="thumbnail">
-							  <img src="/<?php echo $prefix; ?>/assets/img/monster696.png" alt="...">
-							  <div class="bikeName">MONSTER 696</div>
-							</a>
-						  </div>
-						</div>
+					<?php
+					//var_dump($product_detail);
+					$product_detail = $product_detail[0];
+						echo '<div class="row">
+								<div class="col-lg-3">
+									<div class="bikeMainPageBrandName"><img src="/'.$prefix.'/'.$product_detail['product_image'].'" class="brand-logo"/></div>
+									<div>'.$product_detail['product_name'].'</div>
+								</div>
+								<div class="col-lg-9"><a href="" class="btn btn-embossed btn-primary">Add To Cart</a><br/>
+								PRICE:'.$product_detail['price'].' INR<br/>
+								STOCK:'.$product_detail['stock'].'
+								</div>
+								</div><br/>';?>
+							<table>
+								<tr>
+									<th style="min-width:250px;"></th>
+									<th></th>
+								</tr>
+								<tr>
+									<td>ENGINE TYPE</td>
+									<td><?php echo $product_detail['engine_type']?></td>
+								</tr>
+								<tr>
+									<td>DISPLACEMENT</td>
+									<td><?php echo $product_detail['displacement']?></td>
+								</tr>
+								<tr>
+									<td>COMPRESSION RATIO</td>
+									<td><?php echo $product_detail['compression_ratio']?></td>
+								</tr>
+								<tr>
+									<td>MAXIMUM POWER</td>
+									<td><?php echo $product_detail['maximum_power']?></td>
+								</tr>
+								<tr>
+									<td>MAXIMUM TORQUE</td>
+									<td><?php echo $product_detail['maximum_torque']?></td>
+								</tr>
+								<tr>
+									<td>FUEL TANK CAPACITY</td>
+									<td><?php echo $product_detail['fuel_tank_capacity']?></td>
+								</tr>
+								<tr>
+									<td>FUEL SUPPLY SYSTEM</td>
+									<td><?php echo $product_detail['fuel_supply_system']?></td>
+								</tr>
+								<tr>
+									<td>TRANSMISSION TYPE</td>
+									<td><?php echo $product_detail['transmission_type']?></td>
+								</tr>
+								<tr>
+									<td>FRAME TYPE</td>
+									<td><?php echo $product_detail['frame_type']?></td>
+								</tr>
+								<tr>
+									<td>TYRE SIZE</td>
+									<td><?php echo $product_detail['tyre_size']?></td>
+								</tr>
+								<tr>
+									<td>BRAKE TYPE</td>
+									<td><?php echo $product_detail['brake_type']?></td>
+								</tr>
+								<tr>
+									<td>SUSPENSION TYPE</td>
+									<td><?php echo $product_detail['suspension_type']?></td>
+								</tr>
+								<tr>
+									<td>BATTERY</td>
+									<td><?php echo $product_detail['battery']?></td>
+								</tr>
+								<tr>
+									<td>DIMENSIONS</td>
+									<td><?php echo $product_detail['dimensions']?></td>
+								</tr>
+								<tr>
+									<td>WHEEL BASE</td>
+									<td><?php echo $product_detail['wheel_base']?></td>
+								</tr>
+								<tr>
+									<td>GROUND CLEARANCE</td>
+									<td><?php echo $product_detail['ground_clearance']?></td>
+								</tr>
+								<tr>
+									<td>KERB WEIGHT</td>
+									<td><?php echo $product_detail['kerb_weight']?></td>
+								</tr>
+								<tr>
+									<td>COLORS AVAILABLE</td>
+									<td><?php echo $product_detail['colors_available']?></td>
+								</tr>
+								<tr>
+									<td colspan="2"><a href="" class="btn btn-embossed btn-primary">Add To Cart</a></td>
+								</tr>
+							</table>
 					</div>
 					<!--Footer Panel-->
 					<div class="panel-footer">
@@ -124,24 +196,24 @@
 							<div class="dropdown dropup" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Products <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/1"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/2"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/3"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/4"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
 								</ul>
 							</div>
 							<!--Service Link-->
-							<a class="btn btn-link btn-xs dropdown-toggle" href="service">Service </a>
+							<a class="btn btn-link btn-xs dropdown-toggle" href="/<?php echo $prefix; ?>/service">Service </a>
 							<!--Spare Parts Drop Down List-->
-							<div class="dropdown dropup" style="display:inline-block;">
+							<div class="dropdown" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Spare-parts <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="sparePartsMain">REGULAR/<br>PERFORMANCE BOOSTER</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/spare_parts/show/1">REGULAR/<br>PERFORMANCE BOOSTER</a></li>
 									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ridingGearsMain">RIDING GEARS</a></li>
+									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/spare_parts/show/2">RIDING GEARS</a></li>
 								</ul>
 							</div>
 							<!--Sign In Drop Down Form-->

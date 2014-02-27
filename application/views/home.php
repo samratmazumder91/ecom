@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Process Designer</title>
+    <title>KSM.com</title>
 	<link href="/<?php echo $prefix; ?>/assets/css/jquery-ui.css" rel="stylesheet"/>
 	<link href="/<?php echo $prefix; ?>/assets/css/elements.css" rel="stylesheet"/>
     <!-- Bootstrap -->
@@ -28,7 +28,7 @@
 				<div class="panel panel-main">
 					<div class="panel-heading">
 						<!--Site brand & logo-->
-						<h3 class="panel-title" style="color:black;display:inline;font-size:25px; font-weight: 900;">KSM.com</h3>
+						<h3 class="panel-title" style="color:black;display:inline;font-size:25px; font-weight:900;"><a href="home">KSM.com</a></h3>
 						<!--Main menu section-->
 						<div class="dropdown pull-right" style="display:inline-block;">
 							<!--Home Link-->
@@ -37,13 +37,6 @@
 							<div class="dropdown" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Products <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<!--<li role="presentation"><a role="menuitem" tabindex="-1" href="ducatiMain"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="hondaMain"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ktmMain"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="yamahaMain"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>-->
 									<?php
 										foreach($products as $product){
 											echo '<li role="presentation"><a role="menuitem" tabindex="-1" href="products/show/'.$product['id'].'"><img src="/'.$prefix.$product['brand_logo'].'" class="mnu-logo"/> '.$product['brand_name'].'</a></li>';
@@ -57,9 +50,11 @@
 							<div class="dropdown" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Spare-parts <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="sparePartsMain">REGULAR/<br>PERFORMANCE BOOSTER</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ridingGearsMain">RIDING GEARS</a></li>
+									<?php
+										foreach($spare_parts as $sp){
+											echo '<li role="presentation"><a role="menuitem" tabindex="-1" href="spare_parts/show/'.$sp['id'].'">'.$sp['spare_part_type'].'</a></li>';
+										}
+									?>
 								</ul>
 							</div>
 							<!--Sign In Drop Down Form-->
@@ -132,13 +127,11 @@
 							<div class="dropdown dropup" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Products <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ducatiMain"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="hondaMain"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ktmMain"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="yamahaMain"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
+									<?php
+										foreach($products as $product){
+											echo '<li role="presentation"><a role="menuitem" tabindex="-1" href="products/show/'.$product['id'].'"><img src="/'.$prefix.$product['brand_logo'].'" class="mnu-logo"/> '.$product['brand_name'].'</a></li>';
+										}
+									?>
 								</ul>
 							</div>
 							<!--Service Link-->
@@ -147,9 +140,11 @@
 							<div class="dropdown dropup" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Spare-parts <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="sparePartsMain">REGULAR/<br>PERFORMANCE BOOSTER</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="ridingGearsMain">RIDING GEARS</a></li>
+									<?php
+										foreach($spare_parts as $sp){
+											echo '<li role="presentation"><a role="menuitem" tabindex="-1" href="spare_parts/show/'.$sp['id'].'">'.$sp['spare_part_type'].'</a></li>';
+										}
+									?>
 								</ul>
 							</div>
 							<!--Sign In Drop Down Form-->
