@@ -72,7 +72,8 @@ create table service_transactions(
 	model varchar(255) NOT NULL,
 	engine_no varchar(30) NOT NULL,
 	chassis_no varchar(30) NOT NULL,
-	reg_no varchar(255) NOT NULL
+	reg_no varchar(255) NOT NULL,
+	t_date timestamp default current_timestamp
 );
 
 CREATE TABLE ci_sessions(
@@ -83,4 +84,24 @@ CREATE TABLE ci_sessions(
 	user_data text NOT NULL,
 	PRIMARY KEY (session_id),
 	KEY `last_activity_idx` (`last_activity`)
+);
+
+create table card_verification(
+	card_no varchar(16) NOT NULL PRIMARY KEY,
+	card_type varchar(255) NOT NULL,
+	name varchar(255) NOT NULL,
+	cvv_no int(3) NOT NULL,
+	exp_month int(2) NOT NULL,
+	exp_year int(2) NOT NULL,
+	balance int NOT NULL,
+	credit_limit int NOT NULL
+);
+
+create table cust_transactions(
+	id varchar(255) NOT NULL PRIMARY KEY,
+	product_name varchar(255) NOT NULL,
+	price int NOT NULL,
+	payment_mode varchar(255),
+	card_no varchar(255),
+	t_date timestamp default current_timestamp
 );

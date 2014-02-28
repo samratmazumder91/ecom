@@ -52,7 +52,7 @@ class spare_parts extends CI_Controller {
 		$this->load->library('form_validation');
 		$data['cart_detail'] = $this->spare_parts_model->get_cart_detail($spare_parts_id);
 		$qty=$data['cart_detail'][0]['stock'];
-		$this->form_validation->set_rules('qty', 'Quantity', 'required|is_natural_no_zero|less_than[$qty+1]');
+		$this->form_validation->set_rules('qty', 'Quantity', "required|is_natural_no_zero|less_than[$qty+1]");
 		if ($this->form_validation->run() == FALSE)
 		{
 			if($this->ion_auth->logged_in()){
@@ -66,13 +66,14 @@ class spare_parts extends CI_Controller {
 		else
 		{
 			$q=$this->input->post('qty');
-			$data = array(
-               'id'      => $cart_detail['id'],
+			$cart_data = array(
+               'id'      => $data['cart_detail'][0]['id'],
                'qty'     => $q,
-               'price'   => $cart_detail['price'],
-               'name'    => $cart_detail['spare_parts_name']
+               'price'   => $data['cart_detail'][0]['price'],
+               'name'    => $data['cart_detail'][0]['spare_part_name']
             );
-			$this->cart->insert($data);
+			$this->cart->insert($cart_data);
+			var_dump($cart_data);
 			redirect("spare_parts/show_details/$spare_parts_id");
 		}
 	}

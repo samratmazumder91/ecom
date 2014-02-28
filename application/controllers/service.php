@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class service extends CI_Controller {
+class Service extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		if (!$this->ion_auth->logged_in())
@@ -11,18 +11,27 @@ class service extends CI_Controller {
 
 	}
 	
+	private function hasPermission($action,$module = ''){
+		if($module == '')
+			return $this->acl->has_permission(strtolower( __CLASS__), $action);
+		else
+			return $this->acl->has_permission(strtolower($module), $action);
+	}
+	
 	public function index()
 	{
-		if($this->ion_auth->logged_in()){
-			$data['session_status'] = 'AUTHENTICATED';
+		$data['session_status'] = 'AUTHENTICATED';
+		if ($this->hasPermission('edit')){
+			echo 'Show service list here';
 		}else{
-			$data['session_status'] = 'GUEST_SESSION';
+			$this->load->view('service',$data);
 		}
-		$this->load->view('service',$data);
 	}
 	
 	public function storeData()
 	{
+		if(!isset($_POST))
+			redirect('service','refresh');
 		$this->load->helper(array('form', 'url'));
 
 		$this->load->library('form_validation');

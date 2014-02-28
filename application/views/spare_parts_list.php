@@ -88,6 +88,14 @@
 								</ul>
 							</div>
 							<?php } ?>
+							<!--Cart option if elements are there in cart-->
+							<?php
+								if($this->cart->total_items() > 0)
+								{?>
+								<a href="/<?php echo $prefix; ?>/cart_details" class="btn btn-link btn-xs"><?php echo 'Cart ('.$this->cart->total_items().')';?></a>
+								<a class="btn btn-embossed btn-primary" href="">CHECKOUT</a>
+							<?php
+								}?>
 						</div>
 					</div>
 					<!--Body Panel-->
@@ -173,6 +181,14 @@
 								</ul>
 							</div>
 							<?php } ?>
+							<!--Cart option if elements are there in cart-->
+							<?php
+								if($this->cart->total_items() > 0)
+								{?>
+								<a href="/<?php echo $prefix; ?>/cart_details" class="btn btn-link btn-xs"><?php echo 'Cart ('.$this->cart->total_items().')';?></a>
+								<a class="btn btn-embossed btn-primary" href="">CHECKOUT</a>
+							<?php
+								}?>
 					</div>
 				</div>
 			</div>

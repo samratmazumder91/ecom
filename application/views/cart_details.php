@@ -101,27 +101,25 @@
 					<!--Body Panel-->
 					<div class="panel-body">
 					<?php
-						echo '<div class="row">
-								<div class="col-lg-1">
-									<div class="bikeMainPageBrandName"><img src="/'.$prefix.'/'.$product_list[0]['brand_logo'].'" class="brand-logo"/></div>
-								</div>
-								<div class="col-lg-11">'
-									.$product_list[0]['brand_name'].
-								'</div>
-							</div><br/>';
-						echo '<div class="row">';
-						foreach($product_list as $pl){
-							echo'
-								
-								  <div class="col-md-4">
-									<a href="/'.$prefix.'/products/show_detail/'.$pl['id'].'" class="thumbnail">
-									  <img src="/'.$prefix.'/'.$pl['product_image'].'" alt="...">
-									  <div class="bikeName">'.$pl['product_name'].'</div>
-									</a>
-								  </div>';
-						}
-						echo '</div>';
-					?>
+						foreach ($this->cart->contents() as $items)?>
+							<table>
+								<tr>
+									<td>Product Name:</td>
+									<td><?php echo $items['name']?></td>
+								</tr>
+								<tr>
+									<td>Quantity:</td>
+									<td><?php echo $items['qty']?></td>
+								</tr>
+								<tr>
+									<td>Price:</td>
+									<td><?php echo $items['price']?></td>
+								</tr>
+								<tr>
+									<td>SubTotal:</td>
+									<td><?php echo $items['subtotal']?></td>
+								</tr>
+							</table>
 					</div>
 					<!--Footer Panel-->
 					<div class="panel-footer">

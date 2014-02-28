@@ -30,6 +30,7 @@
 						<!--Site brand & logo-->
 						<h3 class="panel-title" style="color:black;display:inline;font-size:25px; font-weight: 900;"><a href="/<?php echo $prefix; ?>/home">KSM.com</a></h3>
 						<!--Main menu section-->
+						<?phpvar_dump($cart_data);?>
 						<div class="dropdown pull-right" style="display:inline-block;">
 							<!--Home Link-->
 							<a class="btn btn-link btn-xs dropdown-toggle" href="/<?php echo $prefix; ?>/home">Home </a>
@@ -88,12 +89,19 @@
 								</ul>
 							</div>
 							<?php } ?>
+							<!--Cart option if elements are there in cart-->
+							<?php
+								if($this->cart->total_items() > 0)
+								{?>
+								<a href="/<?php echo $prefix; ?>/cart_details" class="btn btn-link btn-xs"><?php echo 'Cart ('.$this->cart->total_items().')';?></a>
+								<a class="btn btn-embossed btn-primary" href="">CHECKOUT</a>
+							<?php
+								}?>
 						</div>
 					</div>
 					<!--Body Panel-->
 					<div class="panel-body">
 					<?php
-					//var_dump($product_detail);
 					$spare_part_detail = $spare_part_detail[0];
 						echo '<div class="row">
 								<div class="col-lg-3">
@@ -184,6 +192,14 @@
 								</ul>
 							</div>
 							<?php } ?>
+							<!--Cart option if elements are there in cart-->
+							<?php
+								if($this->cart->total_items() > 0)
+								{?>
+								<a href="/<?php echo $prefix; ?>/cart_details" class="btn btn-link btn-xs"><?php echo 'Cart ('.$this->cart->total_items().')';?></a>
+								<a class="btn btn-embossed btn-primary" href="">CHECKOUT</a>
+							<?php
+								}?>
 					</div>
 				</div>
 			</div>

@@ -71,6 +71,19 @@ class Auth extends CI_Controller {
 				//if the login is successful
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
+				//set user properties on the session
+				$roles = array();
+				$user = $this->ion_auth->user()->row();
+				//$pic = $this->ion_auth->user_profile_picture($user->id)->row();
+				$user_groups = $this->ion_auth->get_users_groups($user->id)->result();
+				foreach($user_groups as $group){
+					array_push($roles, $group->name);
+				}
+				$this->session->set_userdata('uid',$user->id);
+				$this->session->set_userdata('username',$user->username);
+				//$this->session->set_userdata('profile_picture',$pic->profileImage);
+				$this->session->set_userdata('roles',$roles);
+				
 				redirect('/', 'refresh');
 			}
 			else
