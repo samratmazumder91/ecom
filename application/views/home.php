@@ -88,6 +88,15 @@
 								</ul>
 							</div>
 							<?php } ?>
+							<!--Cart option if elements are there in cart-->
+							<?php
+								if($this->cart->total_items() > 0)
+								{
+							?>
+							<a href="" class="btn btn-link btn-xs " type="button" data-toggle="dropdown"><?php echo cart($this->cart->total_items())?> <span class="caret"></span></a>
+							<?php
+								}?>
+								
 						</div>
 					</div>
 					<!--Site body-->

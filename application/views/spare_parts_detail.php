@@ -100,9 +100,17 @@
 									<div class="bikeMainPageBrandName"><img src="/'.$prefix.'/'.$spare_part_detail['spare_part_image'].'" class="brand-logo"/></div>
 									<div>'.$spare_part_detail['spare_part_name'].'</div>
 								</div>
-								<div class="col-lg-9"><a href="" class="btn btn-embossed btn-primary">Add To Cart</a><br/>
-								PRICE:'.$spare_part_detail['price'].' INR<br/>
-								STOCK:'.$spare_part_detail['stock'].'
+								<div class="col-lg-9">
+								<form action="/'.$prefix.'/spare_parts/add_to_cart/'.$spare_part_detail['id'].'" method="post">
+								<label>Qty<input type="text" name="qty" placeholder="0" class="form-control"></label>
+								<input type="submit" value="Add To Cart" class="btn btn-embossed btn-primary">';
+								$msg=$this->session->flashdata('error');
+								if($msg!='')
+								{
+									echo '<div>'.$msg.'</div>';
+								}
+								echo '</form><br/>
+								PRICE:'.$spare_part_detail['price'].' INR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STOCK:'.$spare_part_detail['stock'].'
 								</div>
 								</div><br/>';?>
 							<table>
@@ -113,9 +121,6 @@
 								<tr>
 									<td>COLORS AVIALABLE</td>
 									<td><?php echo $spare_part_detail['color']?></td>
-								</tr>
-								<tr>
-									<td colspan="2"><a href="" class="btn btn-embossed btn-primary">Add To Cart</a></td>
 								</tr>
 							</table>
 					</div>

@@ -92,6 +92,7 @@
 					</div>
 					<!--Body Panel-->
 					<div class="panel-body">
+					<?php echo validation_errors();?>
 					<?php
 					//var_dump($product_detail);
 					$product_detail = $product_detail[0];
@@ -100,9 +101,16 @@
 									<div class="bikeMainPageBrandName"><img src="/'.$prefix.'/'.$product_detail['product_image'].'" class="brand-logo"/></div>
 									<div>'.$product_detail['product_name'].'</div>
 								</div>
-								<div class="col-lg-9"><a href="" class="btn btn-embossed btn-primary">Add To Cart</a><br/>
-								PRICE:'.$product_detail['price'].' INR<br/>
-								STOCK:'.$product_detail['stock'].'
+								<form action="/'.$prefix.'/products/add_to_cart/'.$product_detail['id'].'" method="post">
+								<label>Qty<input type="text" name="qty" placeholder="0" class="form-control"></label>
+								<input type="submit" value="Add To Cart" class="btn btn-embossed btn-primary">';
+								$msg=$this->session->flashdata('error');
+								if($msg!='')
+								{
+									echo '<div>'.$msg.'</div>';
+								}
+								echo '</form><br/>
+								<div>PRICE:'.$product_detail['price'].' INR. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   STOCK:'.$product_detail['stock'].'
 								</div>
 								</div><br/>';?>
 							<table>
@@ -183,7 +191,12 @@
 									<td><?php echo $product_detail['colors_available']?></td>
 								</tr>
 								<tr>
-									<td colspan="2"><a href="" class="btn btn-embossed btn-primary">Add To Cart</a></td>
+									<td colspan="2">
+									<?php echo validation_errors(); ?>
+									<form action="/<?php echo $prefix;?>/products/add_to_cart/'.$product_detail['id'].'" method="post">
+								<label>Qty<input type="text" name="qty" placeholder="0" class="form-control"></label>
+								<input type="submit" value="Add To Cart" class="btn btn-embossed btn-primary">
+								</form><br/></td>
 								</tr>
 							</table>
 					</div>

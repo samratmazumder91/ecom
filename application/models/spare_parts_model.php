@@ -17,11 +17,19 @@ class spare_parts_model extends CI_Model
 	}
 	
 	public function get_spare_parts_detail($spare_parts_id){
-		$query = $this->db->query("SELECT sd.color, sd.price, sl.stock, sl.spare_part_name,
+		$query = $this->db->query("SELECT sl.id, sd.color, sd.price, sl.stock, sl.spare_part_name,
 									sl.spare_part_image
 									FROM spare_parts_detail sd
 									INNER JOIN spare_part_list sl ON sd.spare_part_id = sl.id
 									WHERE sl.id = ".$spare_parts_id);
+		return $query->result_array();
+	}
+	
+	public function get_cart_detail($spare_parts_id){
+		$query = $this->db->query("SELECT sl.id, sd.price, sl.stock, sl.spare_part_name
+									FROM spare_parts_detail sd
+									INNER JOIN spare_part_list sl ON sl.id = sd.spare_part_id
+									WHERE sd.spare_part_id = ".$spare_parts_id);
 		return $query->result_array();
 	}
 }

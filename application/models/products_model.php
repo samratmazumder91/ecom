@@ -17,7 +17,15 @@ class products_model extends CI_Model
 	}
 	
 	public function get_product_detail($product_id){
-		$query = $this->db->query("SELECT pd.engine_type, pd.displacement, pd.compression_ratio, pd.maximum_power, pd.maximum_torque, pd.fuel_tank_capacity, pd.fuel_supply_system, pd.transmission_type, pd.frame_type, pd.tyre_size, pd.brake_type, pd.suspension_type, pd.battery, pd.dimensions, pd.wheel_base, pd.ground_clearance, pd.kerb_weight, pd.colors_available, pd.price, pl.product_image, pl.product_name,pl.stock
+		$query = $this->db->query("SELECT pl.id, pd.engine_type, pd.displacement, pd.compression_ratio, pd.maximum_power, pd.maximum_torque, pd.fuel_tank_capacity, pd.fuel_supply_system, pd.transmission_type, pd.frame_type, pd.tyre_size, pd.brake_type, pd.suspension_type, pd.battery, pd.dimensions, pd.wheel_base, pd.ground_clearance, pd.kerb_weight, pd.colors_available, pd.price, pl.product_image, pl.product_name,pl.stock
+									FROM product_detail pd
+									INNER JOIN product_list pl ON pl.id = pd.product_id
+									WHERE pd.product_id = ".$product_id);
+		return $query->result_array();
+	}
+	
+	public function get_cart_detail($product_id){
+		$query = $this->db->query("SELECT pl.id, pd.price, pl.stock, pl.product_name
 									FROM product_detail pd
 									INNER JOIN product_list pl ON pl.id = pd.product_id
 									WHERE pd.product_id = ".$product_id);
