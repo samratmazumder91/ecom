@@ -8,7 +8,6 @@ class Service extends CI_Controller {
 			redirect('auth/login', 'refresh');
 		}
 		$this->load->model('service_model');
-
 	}
 	
 	private function hasPermission($action,$module = ''){
@@ -22,7 +21,7 @@ class Service extends CI_Controller {
 	{
 		$data['session_status'] = 'AUTHENTICATED';
 		if ($this->hasPermission('edit')){
-			echo 'Show service list here';
+			$this->load->view('service_status',$data);	
 		}else{
 			$this->load->view('service',$data);
 		}
@@ -67,7 +66,71 @@ class Service extends CI_Controller {
 											$this->input->post('engine_no'),
 											$this->input->post('chassis_no'),
 											$this->input->post('reg_no'));
-			$this->load->view('success');
+			$data['last_id']=$this->service_model->get_last_id();
+			$this->load->view('success',$data);
+		}
+	}
+	
+	public function update_status()
+	{
+		if(!isset($_POST))
+			redirect('/service_status','refresh');
+		$this->load->helper(array('form', 'url'));
+
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('id', 'ID', 'required|numeric');
+		$this->form_validation->set_rules('status', 'Status', 'required');
+		if ($this->form_validation->run() == FALSE)
+		{
+			if($this->ion_auth->logged_in()){
+			$data['session_status'] = 'AUTHENTICATED';
+			}else{
+			$data['session_status'] = 'GUEST_SESSION';
+			}
+			$this->load->view('/service_status',$data);
+		}
+		else
+		{
+			$this->service_model->update_data($this->input->post('id'),
+											$this->input->post('status'));
+			redirect('/service','refresh');	
+		}
+	}
+	
+	public function get_service_status()
+	{
+		if(!isset($_POST))
+			redirect('/home','refresh');
+		$this->load->helper(array('form', 'url'));
+
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('id', 'ID', 'required|numeric');
+		if ($this->form_validation->run() == FALSE)
+		{
+			if($this->ion_auth->logged_in()){
+			$data['session_status'] = 'AUTHENTICATED';
+			}else{
+			$data['session_status'] = 'GUEST_SESSION';
+			}
+			$this->session->set_flashdata('error','Incorrect Order ID');
+			redirect("/home");
+		}
+		else
+		{
+			if($this->ion_auth->logged_in()){
+			$data['session_status'] = 'AUTHENTICATED';
+			}else{
+			$data['session_status'] = 'GUEST_SESSION';
+			}
+			$data['track_service_status']=$this->service_model->track_status($this->input->post('id'));
+			var_dump($data['track_service_status']);
+			if(count($data['track_service_status'][0])==0)
+			{
+				$this->session->set_flashdata('error','Incorrect Order ID');
+				redirect("/home");
+			}
+			else
+				$this->load->view('/track_service_status',$data);
 		}
 	}
 }

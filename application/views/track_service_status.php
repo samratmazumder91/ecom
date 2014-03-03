@@ -87,8 +87,7 @@
 									<form action="/<?php echo $prefix; ?>/service/get_service_status" method="post">
 										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" name="id" placeholder="Order ID" class="form-control input-sm" /></a></li>
 										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="submit"  class="btn btn-embossed btn-primary btn-submit" value="Track Your Service"></input></a></li>
-									</form>
-								</ul>
+									</form>								</ul>
 							</div>
 							<?php } ?>
 							<!--Cart option if elements are there in cart-->
@@ -103,26 +102,7 @@
 					</div>
 					<!--Body Panel-->
 					<div class="panel-body">
-					<?php
-						echo '<div class="row">
-								
-									<div class="col-lg-12">'
-										.$spare_parts_list[0]['spare_part_type'].
-								'</div>
-							</div><br/>';
-						echo '<div class="row">';
-						foreach($spare_parts_list as $spl){
-							echo'
-								
-								  <div class="col-md-4">
-									<a href="/'.$prefix.'/spare_parts/show_details/'.$spl['id'].'" class="thumbnail">
-									  <img src="/'.$prefix.'/'.$spl['spare_part_image'].'" alt="...">
-									  <div class="bikeName">'.$spl['spare_part_name'].'</div>
-									</a>
-								  </div>';
-						}
-						echo '</div>';
-					?>
+						<h4>Dear <?php echo $track_service_status[0]['first_name']?> <br/>the service request of your vehicle: <?php echo$track_service_status[0]['model']?><br/> received at <?php echo $track_service_status[0]['t_date']?><br/> bearing registration no.:<?php echo $track_service_status[0]['reg_no']?> is</h4><h3> <?php echo $track_service_status[0]['service_status']?></h3> 
 					</div>
 					<!--Footer Panel-->
 					<div class="panel-footer">
@@ -145,7 +125,7 @@
 							<!--Service Link-->
 							<a class="btn btn-link btn-xs dropdown-toggle" href="/<?php echo $prefix; ?>/service">Service </a>
 							<!--Spare Parts Drop Down List-->
-							<div class="dropdown dropup" style="display:inline-block;">
+							<div class="dropdown" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Spare-parts <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/spare_parts/show/1">REGULAR/<br>PERFORMANCE BOOSTER</a></li>

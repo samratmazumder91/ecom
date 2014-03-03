@@ -3017,6 +3017,8 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
   margin-top: 18px !important;
   opacity: 1;
   visibility: visible;
+  background: #bebebe;
+  border-radius: 6px;
 }
 .dropdown-menu li:first-child dt + a {
   border-radius: 0;
@@ -3051,6 +3053,7 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
   color: rgba(52, 73, 94, 0.75);
   padding: 6px 15px 8px;
   text-decoration: none;
+  display: block;
   -webkit-transition: background-color 0.25s;
   transition: background-color 0.25s;
 }
@@ -3072,6 +3075,7 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
   background: #e1e4e7;
   color: inherit;
   outline: none;
+  display: block;
 }
 .dropdown-menu li > a.highlighted {
   background: #c9cfd4;
@@ -3120,6 +3124,8 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
 }
 .open.dropup > .dropdown-menu {
   margin-bottom: 18px;
+  background: #bebebe;
+  border-radius: 6px;
 }
 .open.dropup > .dropdown-arrow {
   margin-bottom: 10px;

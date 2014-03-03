@@ -13,6 +13,8 @@ class spare_parts extends CI_Controller {
 		}else{
 			$data['session_status'] = 'GUEST_SESSION';
 		}
+		//$data['spare_parts'] = $this->spare_parts_model->get_spare_parts();
+		$this->load->view('spare_parts_list',$data);
 	}
 	
 	public function show($spare_parts_id){
@@ -22,6 +24,7 @@ class spare_parts extends CI_Controller {
 			$data['session_status'] = 'GUEST_SESSION';
 		}
 		$data['spare_parts_list'] = $this->spare_parts_model->get_spare_parts_listings($spare_parts_id);
+		//$data['spare_parts'] = $this->spare_parts_model->get_spare_parts();
 		$this->load->view('spare_parts_list',$data);
 		//echo 'Display listing for spare_parts id '.$spare_parts_id;
 		
@@ -52,7 +55,7 @@ class spare_parts extends CI_Controller {
 		$this->load->library('form_validation');
 		$data['cart_detail'] = $this->spare_parts_model->get_cart_detail($spare_parts_id);
 		$qty=$data['cart_detail'][0]['stock'];
-		$this->form_validation->set_rules('qty', 'Quantity', "required|is_natural_no_zero|less_than[$qty+1]");
+		$this->form_validation->set_rules('qty', 'Quantity', "required|numeric|is_natural_no_zero|less_than[".($qty+1)."]");
 		if ($this->form_validation->run() == FALSE)
 		{
 			if($this->ion_auth->logged_in()){
@@ -70,7 +73,8 @@ class spare_parts extends CI_Controller {
                'id'      => $data['cart_detail'][0]['id'],
                'qty'     => $q,
                'price'   => $data['cart_detail'][0]['price'],
-               'name'    => $data['cart_detail'][0]['spare_part_name']
+               'name'    => $data['cart_detail'][0]['spare_part_name'],
+			   'options' =>'spare_part_list'
             );
 			$this->cart->insert($cart_data);
 			var_dump($cart_data);

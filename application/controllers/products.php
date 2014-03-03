@@ -4,6 +4,7 @@ class Products extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 			$this->load->model('products_model');
+			$this->load->model('spare_parts_model');
 	}
 	
 	public function index()
@@ -13,6 +14,8 @@ class Products extends CI_Controller {
 		}else{
 			$data['session_status'] = 'GUEST_SESSION';
 		}
+		$data['products'] = $this->products_model->get_products();
+		$this->load->view('product_list',$data);
 	}
 	
 	public function show($product_id){
@@ -22,6 +25,7 @@ class Products extends CI_Controller {
 			$data['session_status'] = 'GUEST_SESSION';
 		}
 		$data['product_list'] = $this->products_model->get_product_listings($product_id);
+		//$data['products'] = $this->products_model->get_products();
 		$this->load->view('product_list',$data);
 		//echo 'Display listing for product id '.$product_id;
 		
@@ -52,7 +56,8 @@ class Products extends CI_Controller {
 		$this->load->library('form_validation');
 		$data['cart_detail'] = $this->products_model->get_cart_detail($product_id);
 		$qty=$data['cart_detail'][0]['stock'];
-		$this->form_validation->set_rules('qty', 'Quantity', "required|is_natural_no_zero|less_than[$qty+1]");
+		$q=$this->input->post('qty');
+		$this->form_validation->set_rules('qty', 'Quantity', "required|numeric|is_natural_no_zero|less_than[".($qty+1)."]");
 		if ($this->form_validation->run() == FALSE)
 		{
 			if($this->ion_auth->logged_in()){
@@ -65,15 +70,14 @@ class Products extends CI_Controller {
 		}
 		else
 		{
-			$q=$this->input->post('qty');
 			$cart_data = array(
                'id'      => $data['cart_detail'][0]['id'],
                'qty'     => $q,
                'price'   => $data['cart_detail'][0]['price'],
-               'name'    => $data['cart_detail'][0]['product_name']
+               'name'    => $data['cart_detail'][0]['product_name'],
+			   'options'	 => 'product_list'
             );
 			$this->cart->insert($cart_data);
-			var_dump($cart_data);
 			redirect("products/show_detail/$product_id");
 		}
 	}

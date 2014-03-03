@@ -37,13 +37,11 @@
 							<div class="dropdown" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Products <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/1"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/2"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/3"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/4"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
+									<?php
+										foreach($products as $product){
+											echo '<li role="presentation"><a role="menuitem" tabindex="-1" href="products/show/'.$product['id'].'"><img src="/'.$prefix.$product['brand_logo'].'" class="mnu-logo"/> '.$product['brand_name'].'</a></li>';
+										}
+									?>
 								</ul>
 							</div>
 							<!--Service Link-->
@@ -52,9 +50,11 @@
 							<div class="dropdown" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Spare-parts <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/spare_parts/show/1">REGULAR/<br>PERFORMANCE BOOSTER</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/spare_parts/show/2">RIDING GEARS</a></li>
+									<?php
+										foreach($spare_parts as $sp){
+											echo '<li role="presentation"><a role="menuitem" tabindex="-1" href="spare_parts/show/'.$sp['id'].'">'.$sp['spare_part_type'].'</a></li>';
+										}
+									?>
 								</ul>
 							</div>
 							<!--Sign In Drop Down Form-->
@@ -82,8 +82,11 @@
 							<div class="dropdown" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown"><?php echo $this->session->userdata('user_first_name'); ?> <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<form action="http://localhost/ecom/auth/logout" method="post" accept-charset="utf-8">
-										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="submit" class="btn btn-embossed btn-primary btn-submit" value="LogOut"></input></a></li>
+									<li role="presentation"><a href="http://localhost/ecom/auth/logout" role="menuitem" tabindex="-1" >LOGOUT</a></li>
+									<li role="presentation" class="divider"></li>
+									<form action="/<?php echo $prefix; ?>/service/get_service_status" method="post">
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" name="id" placeholder="Order ID" class="form-control input-sm" /></a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="submit"  class="btn btn-embossed btn-primary btn-submit" value="Track Your Service"></input></a></li>
 									</form>
 								</ul>
 							</div>
@@ -93,32 +96,28 @@
 								if($this->cart->total_items() > 0)
 								{?>
 								<a href="/<?php echo $prefix; ?>/cart_details" class="btn btn-link btn-xs"><?php echo 'Cart ('.$this->cart->total_items().')';?></a>
-								<a class="btn btn-embossed btn-primary" href="">CHECKOUT</a>
+								<a class="btn btn-embossed btn-primary" href="/<?php echo $prefix; ?>/cart_details/update_stock">CHECKOUT</a>
 							<?php
 								}?>
 						</div>
 					</div>
 					<!--Body Panel-->
 					<div class="panel-body">
+					<table border="" style="width: 100%;" class="table table-striped table-hover">
+						<tr>
+							<th>Product</th><th>Quantity</th><th>Price</th><th>Sub Total</th><th></th>
+						</tr>
 					<?php
-						foreach ($this->cart->contents() as $items)?>
-							<table>
+						foreach ($this->cart->contents() as $items)
+								echo '<tr>
+									<td>'.$items['name'].'</td>
+									<td>'.$items['qty'].'</td>
+									<td>'.$items['price'].'</td>
+									<td>'.$items['subtotal'].'</td>
+									<td><a class="btn btn-embossed btn-danger" href="http://localhost/ecom/cart_details/remove/'.$items['rowid'].'">Remove</a></td>
+								</tr>'?>
 								<tr>
-									<td>Product Name:</td>
-									<td><?php echo $items['name']?></td>
-								</tr>
-								<tr>
-									<td>Quantity:</td>
-									<td><?php echo $items['qty']?></td>
-								</tr>
-								<tr>
-									<td>Price:</td>
-									<td><?php echo $items['price']?></td>
-								</tr>
-								<tr>
-									<td>SubTotal:</td>
-									<td><?php echo $items['subtotal']?></td>
-								</tr>
+									<td colspan="2"></td> <td style="text-align: center;">Total amount</td><td><?php echo $this->cart->total()?></td>
 							</table>
 					</div>
 					<!--Footer Panel-->
@@ -130,24 +129,24 @@
 							<div class="dropdown dropup" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Products <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/1"><img src="/<?php echo $prefix; ?>/assets/img/ducati.jpg" class="mnu-logo"/> DUCATI</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/2"><img src="/<?php echo $prefix; ?>/assets/img/honda.jpg" class="mnu-logo"/> HONDA</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/3"><img src="/<?php echo $prefix; ?>/assets/img/ktm.jpg" class="mnu-logo"/> KTM</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/products/show/4"><img src="/<?php echo $prefix; ?>/assets/img/yamaha.jpg" class="mnu-logo yamaha_logo"/> YAMAHA</a></li>
+									<?php
+										foreach($products as $product){
+											echo '<li role="presentation"><a role="menuitem" tabindex="-1" href="products/show/'.$product['id'].'"><img src="/'.$prefix.$product['brand_logo'].'" class="mnu-logo"/> '.$product['brand_name'].'</a></li>';
+										}
+									?>
 								</ul>
 							</div>
 							<!--Service Link-->
 							<a class="btn btn-link btn-xs dropdown-toggle" href="/<?php echo $prefix; ?>/service">Service </a>
 							<!--Spare Parts Drop Down List-->
-							<div class="dropdown" style="display:inline-block;">
+							<div class="dropdown dropup" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Spare-parts <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/spare_parts/show/1">REGULAR/<br>PERFORMANCE BOOSTER</a></li>
-									<li role="presentation" class="divider"></li>
-									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/spare_parts/show/2">RIDING GEARS</a></li>
+									<?php
+										foreach($spare_parts as $sp){
+											echo '<li role="presentation"><a role="menuitem" tabindex="-1" href="spare_parts/show/'.$sp['id'].'">'.$sp['spare_part_type'].'</a></li>';
+										}
+									?>
 								</ul>
 							</div>
 							<!--Sign In Drop Down Form-->
@@ -175,8 +174,11 @@
 							<div class="dropdown dropup" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown"><?php echo $this->session->userdata('user_first_name'); ?> <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<form action="http://localhost/ecom/auth/logout" method="post" accept-charset="utf-8">
-										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="submit" class="btn btn-embossed btn-primary btn-submit" value="LogOut"></input></a></li>
+									<li role="presentation"><a href="http://localhost/ecom/auth/logout" role="menuitem" tabindex="-1" >LOGOUT</a></li>
+									<li role="presentation" class="divider"></li>
+									<form action="/<?php echo $prefix; ?>/service/get_service_status" method="post">
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" name="id" placeholder="Order ID" class="form-control input-sm" /></a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="submit"  class="btn btn-embossed btn-primary btn-submit" value="Track Your Service"></input></a></li>
 									</form>
 								</ul>
 							</div>
@@ -186,7 +188,7 @@
 								if($this->cart->total_items() > 0)
 								{?>
 								<a href="/<?php echo $prefix; ?>/cart_details" class="btn btn-link btn-xs"><?php echo 'Cart ('.$this->cart->total_items().')';?></a>
-								<a class="btn btn-embossed btn-primary" href="">CHECKOUT</a>
+								<a class="btn btn-embossed btn-primary" href="/<?php echo $prefix; ?>/cart_details/update_stock">CHECKOUT</a>
 							<?php
 								}?>
 					</div>

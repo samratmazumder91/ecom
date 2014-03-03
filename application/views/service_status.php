@@ -66,7 +66,7 @@
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Sign In <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 									<form action="http://localhost/ecom/auth/login" method="post" accept-charset="utf-8">
-										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" name="identity" placeholder="Email" class="form-control input-sm" /></a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" name="identity" placeholder="Registered Email" class="form-control input-sm" /></a></li>
 										<li role="presentation" class="divider"></li>
 										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="password" name="password" placeholder="Password" class="form-control input-sm" /></a></li>
 										<li role="presentation" class="divider"></li>
@@ -82,28 +82,39 @@
 							<div class="dropdown" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown"><?php echo $this->session->userdata('user_first_name'); ?> <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<form action="http://localhost/ecom/auth/logout" method="post" accept-charset="utf-8">
-										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="submit" class="btn btn-embossed btn-primary btn-submit" value="LogOut"></input></a></li>
+									<li role="presentation"><a href="http://localhost/ecom/auth/logout" role="menuitem" tabindex="-1" >LOGOUT</a></li>
+									<li role="presentation" class="divider"></li>
+									<form action="/<?php echo $prefix; ?>/service/get_service_status" method="post">
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" name="id" placeholder="Order ID" class="form-control input-sm" /></a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="submit"  class="btn btn-embossed btn-primary btn-submit" value="Track Your Service"></input></a></li>
 									</form>
 								</ul>
 							</div>
 							<?php } ?>
 							<!--Cart option if elements are there in cart-->
 							<?php
-								if($this->cart->total_items() == 0)
-								{
-									echo '<a href="" class="btn btn-link btn-xs">Empty cart</a>';
-								}else{
-							?>
-							<a href="/<?php echo $prefix; ?>/cart_details" class="btn btn-link btn-xs"><?php echo 'Cart ('.$this->cart->total_items().')';?></a>
+								if($this->cart->total_items() > 0)
+								{?>
+								<a href="/<?php echo $prefix; ?>/cart_details" class="btn btn-link btn-xs"><?php echo 'Cart ('.$this->cart->total_items().')';?></a>
+								<a class="btn btn-embossed btn-primary" href="/<?php echo $prefix; ?>/cart_details/update_stock">CHECKOUT</a>
 							<?php
 								}?>
 						</div>
 					</div>
 					<!--Body Panel-->
 					<div class="panel-body">
-					<div>Your Total Bill Amount is </div>
-					<div 
+					<form class="form-horizontal" action="http://localhost/ecom/service/update_status" method="post" accept-charset="utf-8">
+						<label>Enter the Service Order No.<input type="text" name="id" placeholder="Order No." class="form-control input-sm" /></label>
+						<!--<label>Enter the Service Status<input type="text" name="status" placeholder="status" class="form-control input-sm" /></label>-->
+						<label>
+							<select class="form-control" name="status">
+								<option>--Select Status--</option>
+								<option value="completed">COMPLETED!</option>
+								<option value="pending">PENDING</option>
+							</select>
+						</label>
+						<input type="submit" class="btn btn-embossed btn-primary btn-submit" value="Enter"></input>
+					</form>
 					</div>
 					<!--Footer Panel-->
 					<div class="panel-footer">
@@ -143,7 +154,7 @@
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Sign In <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 									<form action="" method="post">
-										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" placeholder="Email" class="form-control input-sm" /></a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" placeholder="Registered Email" class="form-control input-sm" /></a></li>
 										<li role="presentation" class="divider"></li>
 										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="password" placeholder="Password" class="form-control input-sm" /></a></li>
 										<li role="presentation" class="divider"></li>
@@ -159,20 +170,21 @@
 							<div class="dropdown dropup" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown"><?php echo $this->session->userdata('user_first_name'); ?> <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<form action="http://localhost/ecom/auth/logout" method="post" accept-charset="utf-8">
-										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="submit" class="btn btn-embossed btn-primary btn-submit" value="LogOut"></input></a></li>
+									<li role="presentation"><a href="http://localhost/ecom/auth/logout" role="menuitem" tabindex="-1" >LOGOUT</a></li>
+									<li role="presentation" class="divider"></li>
+									<form action="/<?php echo $prefix; ?>/service/get_service_status" method="post">
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" name="id" placeholder="Order ID" class="form-control input-sm" /></a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="submit"  class="btn btn-embossed btn-primary btn-submit" value="Track Your Service"></input></a></li>
 									</form>
 								</ul>
 							</div>
 							<?php } ?>
 							<!--Cart option if elements are there in cart-->
 							<?php
-								if($this->cart->total_items() == 0)
-								{
-									echo '<a href="" class="btn btn-link btn-xs">Empty cart</a>';
-								}else{
-							?>
-							<a href="/<?php echo $prefix; ?>/cart_details" class="btn btn-link btn-xs"><?php echo 'Cart ('.$this->cart->total_items().')';?></a>
+								if($this->cart->total_items() > 0)
+								{?>
+								<a href="/<?php echo $prefix; ?>/cart_details" class="btn btn-link btn-xs"><?php echo 'Cart ('.$this->cart->total_items().')';?></a>
+								<a class="btn btn-embossed btn-primary" href="/<?php echo $prefix; ?>/cart_details/update_stock">CHECKOUT</a>
 							<?php
 								}?>
 					</div>

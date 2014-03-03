@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Process Designer</title>
+    <title>KSM.com</title>
 	<link href="/<?php echo $prefix; ?>/assets/css/jquery-ui.css" rel="stylesheet"/>
 	<link href="/<?php echo $prefix; ?>/assets/css/elements.css" rel="stylesheet"/>
     <!-- Bootstrap -->
@@ -82,8 +82,11 @@
 							<div class="dropdown" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown"><?php echo $this->session->userdata('user_first_name'); ?> <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<form action="http://localhost/ecom/auth/logout" method="post" accept-charset="utf-8">
-										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="submit" class="btn btn-embossed btn-primary btn-submit" value="LogOut"></input></a></li>
+									<li role="presentation"><a href="http://localhost/ecom/auth/logout" role="menuitem" tabindex="-1" >LOGOUT</a></li>
+									<li role="presentation" class="divider"></li>
+									<form action="/<?php echo $prefix; ?>/service/get_service_status" method="post">
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" name="id" placeholder="Order ID" class="form-control input-sm" /></a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="submit"  class="btn btn-embossed btn-primary btn-submit" value="Track Your Service"></input></a></li>
 									</form>
 								</ul>
 							</div>
@@ -93,7 +96,7 @@
 								if($this->cart->total_items() > 0)
 								{?>
 								<a href="/<?php echo $prefix; ?>/cart_details" class="btn btn-link btn-xs"><?php echo 'Cart ('.$this->cart->total_items().')';?></a>
-								<a class="btn btn-embossed btn-primary" href="">CHECKOUT</a>
+								<a class="btn btn-embossed btn-primary" href="/<?php echo $prefix; ?>/cart_details/update_stock">CHECKOUT</a>
 							<?php
 								}?>
 						</div>
@@ -197,14 +200,6 @@
 									<td>COLORS AVAILABLE</td>
 									<td><?php echo $product_detail['colors_available']?></td>
 								</tr>
-								<tr>
-									<td colspan="2">
-									<?php echo validation_errors(); ?>
-									<form action="/<?php echo $prefix;?>/products/add_to_cart/'.$product_detail['id'].'" method="post">
-								<label>Qty<input type="text" name="qty" placeholder="0" class="form-control"></label>
-								<input type="submit" value="Add To Cart" class="btn btn-embossed btn-primary">
-								</form><br/></td>
-								</tr>
 							</table>
 					</div>
 					<!--Footer Panel-->
@@ -228,7 +223,7 @@
 							<!--Service Link-->
 							<a class="btn btn-link btn-xs dropdown-toggle" href="/<?php echo $prefix; ?>/service">Service </a>
 							<!--Spare Parts Drop Down List-->
-							<div class="dropdown" style="display:inline-block;">
+							<div class="dropdown dropup" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Spare-parts <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 									<li role="presentation"><a role="menuitem" tabindex="-1" href="/<?php echo $prefix; ?>/spare_parts/show/1">REGULAR/<br>PERFORMANCE BOOSTER</a></li>
@@ -261,8 +256,11 @@
 							<div class="dropdown dropup" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown"><?php echo $this->session->userdata('user_first_name'); ?> <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-									<form action="http://localhost/ecom/auth/logout" method="post" accept-charset="utf-8">
-										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="submit" class="btn btn-embossed btn-primary btn-submit" value="LogOut"></input></a></li>
+									<li role="presentation"><a href="http://localhost/ecom/auth/logout" role="menuitem" tabindex="-1" >LOGOUT</a></li>
+									<li role="presentation" class="divider"></li>
+									<form action="/<?php echo $prefix; ?>/service/get_service_status" method="post">
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" name="id" placeholder="Order ID" class="form-control input-sm" /></a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="submit"  class="btn btn-embossed btn-primary btn-submit" value="Track Your Service"></input></a></li>
 									</form>
 								</ul>
 							</div>
@@ -272,7 +270,7 @@
 								if($this->cart->total_items() > 0)
 								{?>
 								<a href="/<?php echo $prefix; ?>/cart_details" class="btn btn-link btn-xs"><?php echo 'Cart ('.$this->cart->total_items().')';?></a>
-								<a class="btn btn-embossed btn-primary" href="">CHECKOUT</a>
+								<a class="btn btn-embossed btn-primary" href="/<?php echo $prefix; ?>/cart_details/update_stock">CHECKOUT</a>
 							<?php
 								}?>
 					</div>

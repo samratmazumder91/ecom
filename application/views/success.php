@@ -37,6 +37,7 @@
 						<div class="row">
 							<div class="col-lg-12">
 							<h2>Your Service Order is Successful.</h2>
+							<h5>Your ORDER ID is <?php echo $last_id[0]['id'];?>. Please Note it for future references</h5>
 							</div>
 							<!--Sign Up Form-->
 						</div>
@@ -56,7 +57,7 @@
 	<script src="/<?php echo $prefix; ?>/assets/js/jquery.jsPlumb-1.5.5-min.js"></script>
 	<script src="/<?php echo $prefix; ?>/assets/js/app/app.js"></script>
 	<script>
-		setTimeout(function(){ window.location = '/<?php echo $prefix ?>/home'}, 15000);
+		setTimeout(function(){ window.location = '/<?php echo $prefix ?>/home'}, 8000);
 	</script>
   </body>
 </html>

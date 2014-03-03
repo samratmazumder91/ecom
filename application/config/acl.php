@@ -10,7 +10,7 @@ $config['permission'] = array(
 	'service' => array(
 		'view'			=> array('admin', 'member'),
 		'add'			=> array('admin', 'member'),
-		'edit'			=> array('admin', 'service_member'),
+		'edit'			=> array('service_member'),
 		'delete'	 	=> array('admin')
 	)
 );
