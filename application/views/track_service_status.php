@@ -66,7 +66,7 @@
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Sign In <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 									<form action="http://localhost/ecom/auth/login" method="post" accept-charset="utf-8">
-										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" name="identity" placeholder="Email" class="form-control input-sm" /></a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" name="identity" placeholder="Registered Email" class="form-control input-sm" /></a></li>
 										<li role="presentation" class="divider"></li>
 										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="password" name="password" placeholder="Password" class="form-control input-sm" /></a></li>
 										<li role="presentation" class="divider"></li>
@@ -102,7 +102,7 @@
 					</div>
 					<!--Body Panel-->
 					<div class="panel-body">
-						<h4>Dear <?php echo $track_service_status[0]['first_name']?> <br/>the service request of your vehicle: <?php echo$track_service_status[0]['model']?><br/> received at <?php echo $track_service_status[0]['t_date']?><br/> bearing registration no.:<?php echo $track_service_status[0]['reg_no']?> is</h4><h3> <?php echo $track_service_status[0]['service_status']?></h3> 
+						<h4>Dear <?php echo $track_service_status[0]['first_name']?>,<br/>the service request of your vehicle: <?php echo $track_service_status[0]['model']?><br/> received at <?php echo $track_service_status[0]['t_date']?><br/> bearing registration no.:<?php echo $track_service_status[0]['reg_no']?> is</h4><h3> <?php echo $track_service_status[0]['service_status']?></h3> 
 					</div>
 					<!--Footer Panel-->
 					<div class="panel-footer">
@@ -142,7 +142,7 @@
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Sign In <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 									<form action="" method="post">
-										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" placeholder="Email" class="form-control input-sm" /></a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" placeholder="Registered Email" class="form-control input-sm" /></a></li>
 										<li role="presentation" class="divider"></li>
 										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="password" placeholder="Password" class="form-control input-sm" /></a></li>
 										<li role="presentation" class="divider"></li>

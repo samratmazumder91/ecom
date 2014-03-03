@@ -67,7 +67,7 @@
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Sign In <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 									<form action="http://localhost/ecom/auth/login" method="post" accept-charset="utf-8">
-										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" name="identity" placeholder="Email" class="form-control input-sm" /></a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" name="identity" placeholder="Registered Email" class="form-control input-sm" /></a></li>
 										<li role="presentation" class="divider"></li>
 										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="password" name="password" placeholder="Password" class="form-control input-sm" /></a></li>
 										<li role="presentation" class="divider"></li>
@@ -139,7 +139,7 @@
 					<div class="panel-footer">
 						<div class="dropdown" style="display:inline-block;">
 							<!--Home Link-->
-							<a class="btn btn-link btn-xs dropdown-toggle" href="home">Home </a>
+							<a class="btn btn-link btn-xs dropdown-toggle" href="/<?php echo $prefix; ?>/home">Home </a>
 							<!--Products Drop Down List-->
 							<div class="dropdown dropup" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Products <span class="caret"></span></button>
@@ -173,7 +173,7 @@
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Sign In <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 									<form action="" method="post">
-										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" placeholder="Email" class="form-control input-sm" /></a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" placeholder="Registered Email" class="form-control input-sm" /></a></li>
 										<li role="presentation" class="divider"></li>
 										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="password" placeholder="Password" class="form-control input-sm" /></a></li>
 										<li role="presentation" class="divider"></li>

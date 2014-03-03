@@ -123,7 +123,7 @@ class Service extends CI_Controller {
 			$data['session_status'] = 'GUEST_SESSION';
 			}
 			$data['track_service_status']=$this->service_model->track_status($this->input->post('id'));
-			var_dump($data['track_service_status']);
+			//var_dump($data['track_service_status']);
 			if(count($data['track_service_status'][0])==0)
 			{
 				$this->session->set_flashdata('error','Incorrect Order ID');

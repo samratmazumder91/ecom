@@ -66,7 +66,7 @@
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Sign In <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 									<form action="http://localhost/ecom/auth/login" method="post" accept-charset="utf-8">
-										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" name="identity" placeholder="Email" class="form-control input-sm" /></a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" name="identity" placeholder="Registered Email" class="form-control input-sm" /></a></li>
 										<li role="presentation" class="divider"></li>
 										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="password" name="password" placeholder="Password" class="form-control input-sm" /></a></li>
 										<li role="presentation" class="divider"></li>
@@ -130,75 +130,75 @@
 								</tr>
 								<tr>
 									<td>ENGINE TYPE</td>
-									<td><?php echo $product_detail['engine_type']?></td>
+									<td>: <?php echo $product_detail['engine_type']?></td>
 								</tr>
 								<tr>
 									<td>DISPLACEMENT</td>
-									<td><?php echo $product_detail['displacement']?></td>
+									<td>: <?php echo $product_detail['displacement']?></td>
 								</tr>
 								<tr>
 									<td>COMPRESSION RATIO</td>
-									<td><?php echo $product_detail['compression_ratio']?></td>
+									<td>: <?php echo $product_detail['compression_ratio']?></td>
 								</tr>
 								<tr>
 									<td>MAXIMUM POWER</td>
-									<td><?php echo $product_detail['maximum_power']?></td>
+									<td>: <?php echo $product_detail['maximum_power']?></td>
 								</tr>
 								<tr>
 									<td>MAXIMUM TORQUE</td>
-									<td><?php echo $product_detail['maximum_torque']?></td>
+									<td>: <?php echo $product_detail['maximum_torque']?></td>
 								</tr>
 								<tr>
 									<td>FUEL TANK CAPACITY</td>
-									<td><?php echo $product_detail['fuel_tank_capacity']?></td>
+									<td>: <?php echo $product_detail['fuel_tank_capacity']?></td>
 								</tr>
 								<tr>
 									<td>FUEL SUPPLY SYSTEM</td>
-									<td><?php echo $product_detail['fuel_supply_system']?></td>
+									<td>: <?php echo $product_detail['fuel_supply_system']?></td>
 								</tr>
 								<tr>
 									<td>TRANSMISSION TYPE</td>
-									<td><?php echo $product_detail['transmission_type']?></td>
+									<td>: <?php echo $product_detail['transmission_type']?></td>
 								</tr>
 								<tr>
 									<td>FRAME TYPE</td>
-									<td><?php echo $product_detail['frame_type']?></td>
+									<td>: <?php echo $product_detail['frame_type']?></td>
 								</tr>
 								<tr>
 									<td>TYRE SIZE</td>
-									<td><?php echo $product_detail['tyre_size']?></td>
+									<td>: <?php echo $product_detail['tyre_size']?></td>
 								</tr>
 								<tr>
 									<td>BRAKE TYPE</td>
-									<td><?php echo $product_detail['brake_type']?></td>
+									<td>: <?php echo $product_detail['brake_type']?></td>
 								</tr>
 								<tr>
 									<td>SUSPENSION TYPE</td>
-									<td><?php echo $product_detail['suspension_type']?></td>
+									<td>: <?php echo $product_detail['suspension_type']?></td>
 								</tr>
 								<tr>
 									<td>BATTERY</td>
-									<td><?php echo $product_detail['battery']?></td>
+									<td>: <?php echo $product_detail['battery']?></td>
 								</tr>
 								<tr>
 									<td>DIMENSIONS</td>
-									<td><?php echo $product_detail['dimensions']?></td>
+									<td>: <?php echo $product_detail['dimensions']?></td>
 								</tr>
 								<tr>
 									<td>WHEEL BASE</td>
-									<td><?php echo $product_detail['wheel_base']?></td>
+									<td>: <?php echo $product_detail['wheel_base']?></td>
 								</tr>
 								<tr>
 									<td>GROUND CLEARANCE</td>
-									<td><?php echo $product_detail['ground_clearance']?></td>
+									<td>: <?php echo $product_detail['ground_clearance']?></td>
 								</tr>
 								<tr>
 									<td>KERB WEIGHT</td>
-									<td><?php echo $product_detail['kerb_weight']?></td>
+									<td>: <?php echo $product_detail['kerb_weight']?></td>
 								</tr>
 								<tr>
 									<td>COLORS AVAILABLE</td>
-									<td><?php echo $product_detail['colors_available']?></td>
+									<td>: <?php echo $product_detail['colors_available']?></td>
 								</tr>
 							</table>
 					</div>
@@ -206,7 +206,7 @@
 					<div class="panel-footer">
 						<div class="dropdown" style="display:inline-block;">
 							<!--Home Link-->
-							<a class="btn btn-link btn-xs dropdown-toggle" href="home">Home </a>
+							<a class="btn btn-link btn-xs dropdown-toggle" href="/<?php echo $prefix; ?>/home">Home </a>
 							<!--Products Drop Down List-->
 							<div class="dropdown dropup" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Products <span class="caret"></span></button>
@@ -240,7 +240,7 @@
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Sign In <span class="caret"></span></button>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 									<form action="" method="post">
-										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" placeholder="Email" class="form-control input-sm" /></a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="text" placeholder="Registered Email" class="form-control input-sm" /></a></li>
 										<li role="presentation" class="divider"></li>
 										<li role="presentation"><a role="menuitem" tabindex="-1" ><input type="password" placeholder="Password" class="form-control input-sm" /></a></li>
 										<li role="presentation" class="divider"></li>

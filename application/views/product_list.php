@@ -130,7 +130,7 @@
 					<div class="panel-footer">
 						<div class="dropdown" style="display:inline-block;">
 							<!--Home Link-->
-							<a class="btn btn-link btn-xs dropdown-toggle" href="home">Home </a>
+							<a class="btn btn-link btn-xs dropdown-toggle" href="/<?php echo $prefix; ?>/home">Home </a>
 							<!--Products Drop Down List-->
 							<div class="dropdown dropup" style="display:inline-block;">
 								<button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Products <span class="caret"></span></button>
